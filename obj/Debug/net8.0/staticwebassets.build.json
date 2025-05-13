@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "qoK8jBEp5GUfFyRcs+DUz9NkItOAg8bZzHLu7Qd+aFs=",
+  "Source": "SampleDevOps",
+  "BasePath": "_content/SampleDevOps",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
