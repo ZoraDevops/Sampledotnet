@@ -19,4 +19,4 @@ COPY --from=build-env /app/out .
 EXPOSE 80
 
 # Run the app
-ENTRYPOINT ["dotnet", "ZoraTest.dll"]  # <-- Replace with your actual DLL name
+ENTRYPOINT ["dotnet", "SampleDevOps.dll"] 
