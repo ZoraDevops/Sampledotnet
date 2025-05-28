@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/aspnet:8.0
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 
 # Create jenkins user and group (inside the container)
 RUN addgroup --system jenkins && adduser --system --ingroup jenkins jenkins
