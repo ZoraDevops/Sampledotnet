@@ -4,10 +4,10 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0
 RUN addgroup --system jenkins && adduser --system --ingroup jenkins jenkins
 
 WORKDIR /app
-COPY ./published .
+COPY published/ ./
 
 # Switch to jenkins user
 USER jenkins
 
-EXPOSE 80
+EXPOSE 9090
 ENTRYPOINT ["dotnet", "SampleDevOps.dll"]
