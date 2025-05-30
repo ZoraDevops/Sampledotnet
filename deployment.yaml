@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: zora-container
-          image: 192.168.10.222:5000/zora:latest
+          image: 192.168.10.222:5000/zora:__IMAGE_TAG__
           imagePullPolicy: Always
           ports:
             - containerPort: 80
