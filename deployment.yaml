@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: zora-app
-          image: 192.168.10.222:5000/zora:1.0.XX  # Replace XX with actual build number via pipeline
+          image: 192.168.10.222:5000/zora:BUILD_TAG_PLACEHOLDER
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
