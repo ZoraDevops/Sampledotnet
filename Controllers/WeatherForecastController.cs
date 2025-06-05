@@ -18,6 +18,7 @@ namespace SampleDevOps.Controllers
             _logger = logger;
         }
 
+        // Original GET: /WeatherForecast
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
@@ -30,16 +31,23 @@ namespace SampleDevOps.Controllers
             .ToArray();
         }
 
-        [HttpGet("weather/GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        // 🆕 New GET: /WeatherForecast/{day}
+        [HttpGet("{day}")]
+        public ActionResult<WeatherForecast> GetByDay(int day)
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            if (day < 1 || day > 5)
             {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+                return BadRequest("Day must be between 1 and 5.");
+            }
+
+            var forecast = new WeatherForecast
+            {
+                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(day)),
                 TemperatureC = Random.Shared.Next(-20, 55),
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            };
+
+            return Ok(forecast);
         }
     }
 }
